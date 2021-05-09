@@ -65,6 +65,12 @@ This data requires audio preprocessing. For alignment of audio files to the vide
     * Validation WER : 18.21%
     * Test WER : 23.2%
 
+### Team Members:
+* [Parth Chhabra](https://github.com/parthchhabra0611)
+* [Kushagra Babbar](https://github.com/kush1920)
+* Dhaval Kanani
+* Chirag Sethiya
+
 ### Future Improvements:
 
 * Used data augmentation with jitter, random flipping of videos.
