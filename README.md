@@ -39,10 +39,11 @@ The [Dlib](https://pypi.org/project/dlib/) library was used to extract the major
 
 * GRID - These pre-processed frames were then saved as .npy files in the x_data/ folder. 
 This data requires audio preprocessing. For alignment of audio files to the video files, the connectionist temporal classification (CTC) loss was used. It is widely used in modern speech recognition as it eliminates the need for training data that aligns inputs to target outputs. Given a model that outputs a sequence of discrete distributions over the token classes (vocabulary) augmented with a special “blank” token, CTC computes the probability of a sequence by marginalising over all sequences that are defined as equivalent to this sequence. This simultaneously removes the need for alignments and addresses variable-length sequences.
-More information can be found in this [research paper](https://arxiv.org/pdf/1611.01599.pdf) which considers use of Lipnet and importance of CTC for obtaining best results with GRID dataset.
 
-* So, for incorporating CTC, audio_to_ctc_labels file was used. This made use of pretrained Wave2Vec transformer to convert audio files to ctc texts which gave characters from a-z for each spoken character and an underscore ( _ ) for the timesteps when the speaker remains quiet. All the audio files were processed for each speaker and stored as a csv file namely ‘y_labels.csv’. 
-For the implementation of Wave2Vec, you may refer [this article](https://www.kdnuggets.com/2021/03/speech-text-wav2vec.html).
+	* More information can be found in this [research paper](https://arxiv.org/pdf/1611.01599.pdf) which considers use of Lipnet and importance of CTC for obtaining best results with GRID dataset.
+
+	* So, for incorporating CTC, audio_to_ctc_labels file was used. This made use of pretrained Wave2Vec transformer to convert audio files to ctc texts which gave characters from a-z for each spoken character and an underscore ( _ ) for the timesteps when the speaker remains quiet. All the audio files were processed for each speaker and stored as a csv file namely ‘y_labels.csv’. 
+	For the implementation of Wave2Vec, you may refer [this article](https://www.kdnuggets.com/2021/03/speech-text-wav2vec.html).
 
 ### Modelling and Training:
 
@@ -70,6 +71,4 @@ For the implementation of Wave2Vec, you may refer [this article](https://www.kdn
 * Create custom audio to ctc model inplace of pretrained transformer.
 * Train for more epochs.
 * Train on LSR dataset for longer sentences.
-
-
 
