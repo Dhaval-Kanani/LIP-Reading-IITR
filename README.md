@@ -22,7 +22,7 @@ Lipreading helps people understand more speech by watching for and identifying m
 * MIRACL – We simply used Kaggle’s inbuilt notebook and GPU for preprocessing and training purpose which could be found in MIRACL_FILES above.
 
 * GRID – 
-	* Major computation was done using AWS Sagemaker with S3 bucket as the data storage unit for the GRID dataset.
+	* Major computation was done using AWS Sage-maker with S3 bucket (link to our bucket with data) as the data storage unit for the GRID dataset.
 	Pricing of Sagemaker can be found at this [link](https://aws.amazon.com/sagemaker/pricing/). For detailed information on how to start using AWS and Sagemaker follow these links. ([link1](https://adamtheautomator.com/upload-file-to-s3/), [link2](https://www.pluralsight.com/guides/build-your-first-deep-learning-solution-with-aws-sagemaker))
 	* To setup AWS instance, first upload the data into an S3 bucket, then use Setup.ipynb for setting up and unzipping the data for further use.
 	The directory will look like the below picture with additional files about which more description is given in the lower section.
@@ -52,19 +52,24 @@ For the implementation of Wave2Vec, you may refer [this article](https://www.kdn
 * GRID – Lipnet model was used on the processed videos and corresponding ctc labels. LipNet is a neural network architecture for lipreading that maps variable-length sequences of video frames to text sequences, and is trained end-to-end. For more information refer this [research paper](https://arxiv.org/pdf/1611.01599.pdf). 
 	* The model file is present above by the name ‘lipnet.ipynb’. The training file is present as ‘training.ipynb’ and this file imports Lipnet model and all the preprocessed data and trains the model. The outputs i.e. the predictions given by the model on the validation data can be decoded using a decoder which converts ctc labels back to text.
 
+### Result:
 
+* MIRACL - Metric used for evaluation was accuracy.
+	* Training accuracy : 97%
+	* Validation accuracy : 46.15%
+	* Test accuracy : 25%
+* GRID  - Metric for evaluation was Word Error Rate (WER)
+	* ![assets2](https://github.com/parthchhabra0611/LIP-Reading-IITR/blob/main/wer_img.jpg)	
+    * Training WER : 10.6%
+    * Validation WER : 18.21%
+    * Test WER : 23.2%
 
+### Future Improvements:
 
-
-
-
-
-
-
-
-
-
-
+* Used data augmentation with jitter, random flipping of videos.
+* Create custom audio to ctc model inplace of pretrained transformer.
+* Train for more epochs.
+* Train on LSR dataset for longer sentences.
 
 
 
