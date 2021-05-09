@@ -21,13 +21,13 @@ Lipreading helps people understand more speech by watching for and identifying m
 ### Technical Requirements and Setup:
 * MIRACL – We simply used Kaggle’s inbuilt notebook and GPU for preprocessing and training purpose which could be found in MIRACL_FILES above.
 
-* GRID – 
-	* Major computation was done using AWS Sage-maker with S3 bucket ([link to our bucket with data](https://s3.console.aws.amazon.com/s3/home?region=ap-south-1)) as the data storage unit for the GRID dataset.
-	Pricing of Sagemaker can be found at this [link](https://aws.amazon.com/sagemaker/pricing/). For detailed information on how to start using AWS and Sagemaker follow these links. ([link1](https://adamtheautomator.com/upload-file-to-s3/), [link2](https://www.pluralsight.com/guides/build-your-first-deep-learning-solution-with-aws-sagemaker))
+* GRID – Major computation was done using AWS Sage-maker with S3 bucket ([link to our bucket with data](https://s3.console.aws.amazon.com/s3/home?region=ap-south-1)) as the data storage unit for the GRID dataset.
+	* Instance Used - ml.m4.xlarge with 4 CPU, 16GB RAM and 1000GB space.
+	* Pricing of Sagemaker can be found at this [link](https://aws.amazon.com/sagemaker/pricing/). For detailed information on how to start using AWS and Sagemaker follow these links. ([link1](https://adamtheautomator.com/upload-file-to-s3/), [link2](https://www.pluralsight.com/guides/build-your-first-deep-learning-solution-with-aws-sagemaker))
 	* To setup AWS instance, first upload the data into an S3 bucket, then use Setup.ipynb for setting up and unzipping the data for further use.
 	The directory will look like the below picture with additional files about which more description is given in the lower section.
 
-![assets](https://github.com/parthchhabra0611/LIP-Reading-IITR/blob/main/screenshot.png)	
+![assets](https://github.com/parthchhabra0611/LIP-Reading-IITR/blob/main/directory.jpg)	
 	 
 
 
