@@ -1,14 +1,14 @@
 ## LIP-Reading-IITR
 
-###Abstract:
+### Abstract:
 
 Human lip-reading is a challenging task. It requires not only knowledge of underlying language but also visual clues to predict spoken words. Experts need certain level of experience and understanding of visual expressions learning to decode spoken words. Now-a-days, with the help of deep learning it is possible to translate lip sequences into meaningful words.
 
-###Background:
+### Background:
 
 Lipreading helps people understand more speech by watching for and identifying mouth movements that are associated with speech. Being able to see speech helps people communicate better, especially in challenging listening environments like when there is background noise.
 
-###Datasets Used:
+### Datasets Used:
 
 * MIRACL dataset was used small model preparation wherein words and phrases were simply classified based on the data (frames for word which was taken from Kaggle ([link](https://www.kaggle.com/apoorvwatsky/miraclvc1))
 
@@ -18,7 +18,7 @@ Lipreading helps people understand more speech by watching for and identifying m
 
 	* GRID is a large multitalker audio-visual sentence corpus to support joint computational-behavioral studies in speech perception. In brief, the corpus consists of high-quality audio and video (facial) recordings of 1000 sentences spoken by each of 34 talkers (18 male, 16 female). Sentences are of the form "put red at G9 now".  The corpus, together with transcriptions, is freely available for research use. 
 
-###Technical Requirements and Setup:
+### Technical Requirements and Setup:
 * MIRACL – We simply used Kaggle’s inbuilt notebook and GPU for preprocessing and training purpose which could be found in MIRACL_FILES above.
 
 * GRID – 
@@ -31,7 +31,7 @@ Lipreading helps people understand more speech by watching for and identifying m
 	 
 
 
-###Preprocessing the data:
+### Preprocessing the data:
 
 The [Dlib](https://pypi.org/project/dlib/) library was used to extract the major keypoints of mouth at each timestep. Based on the keypoints (using extreme left, right, top and bottom coordinates), we cropped each frame and captured the mouth and lips. 
 
@@ -44,7 +44,7 @@ More information can be found in this [research paper](https://arxiv.org/pdf/161
 * So, for incorporating CTC, audio_to_ctc_labels file was used. This made use of pretrained Wave2Vec transformer to convert audio files to ctc texts which gave characters from a-z for each spoken character and an underscore ( _ ) for the timesteps when the speaker remains quiet. All the audio files were processed for each speaker and stored as a csv file namely ‘y_labels.csv’. 
 For the implementation of Wave2Vec, you may refer [this article](https://www.kdnuggets.com/2021/03/speech-text-wav2vec.html).
 
-###Modelling and Training:
+### Modelling and Training:
 
 * MIRACL – The VGGFace model was used which is trained and evaluated on benchmark face recognition datasets, demonstrating that the model is effective at generating generalized features from faces. The VGGFace model is described by Omkar Parkhi in the 2015 paper titled [“Deep Face Recognition”](http://www.robots.ox.ac.uk/~vgg/publications/2015/Parkhi15/parkhi15.pdf).
 	* The model file is present above by the name ‘VGGFace_training_validation.ipynb’ in MIRACL_FILES. A time distributed layer, an LSTM layer and final dense layer was used on the features produced by VGGFace and classification was done.
