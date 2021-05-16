@@ -68,7 +68,7 @@ This data requires audio preprocessing. For alignment of audio files to the vide
 ### Team Members:
 * [Parth Chhabra](https://github.com/parthchhabra0611)
 * [Kushagra Babbar](https://github.com/kush1920)
-* Dhaval Kanani
+* [Dhaval Kanani](https://github.com/Dhaval-Kanani)
 * Chirag Sethiya
 
 ### Future Improvements:
